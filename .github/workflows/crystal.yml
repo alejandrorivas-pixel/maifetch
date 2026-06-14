@@ -1,0 +1,17 @@
+name: Crystal
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  fixture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: crystal-lang/install-crystal@v1
+        with:
+          crystal: latest
+      - run: crystal --version
+      - run: crystal tool format --check src/maifetch.cr
+      - run: ./test/run-fixture.sh

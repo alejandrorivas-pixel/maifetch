@@ -1,6 +1,5 @@
 # maifetch
-a really lazy fetch tool for [maitea](https://maitea.app) written in go\
-also contains a little api wrapper for maitea too :D
+a really lazy fetch tool for [maitea](https://maitea.app) rewritten in Crystal.
 
 ![image](https://github.com/user-attachments/assets/96cd7018-8a00-4785-a1a8-9fe503263662)
 
@@ -23,13 +22,19 @@ obtained from `os.UserConfigDir`
 
 ## how to build
 1. clone the project with `git clone https://github.com/HutchyBen/maifetch`
-2. build with `go build maifetch/cmd/maifetch`
-3. run outputted executable ensuring access token is either
+2. install [Crystal](https://crystal-lang.org/install/)
+3. build with `crystal build src/maifetch.cr -o maifetch`
+4. run outputted executable ensuring access token is either
     - in config file
     - in environment variables
     - in command line options
 
+## testing
+Run the fixture test without a real MaiTea token:
+
+```sh
+./test/run-fixture.sh
+```
 
 ## todo
-- test it properly
 - add friendly errors
