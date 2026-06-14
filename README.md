@@ -1,6 +1,5 @@
 # maifetch
-a really lazy fetch tool for [maitea](https://maitea.app) written in go\
-also contains a little api wrapper for maitea too :D
+a really lazy fetch tool for [maitea](https://maitea.app) written in Delphi-compatible Object Pascal.
 
 ![image](https://github.com/user-attachments/assets/96cd7018-8a00-4785-a1a8-9fe503263662)
 
@@ -23,11 +22,21 @@ obtained from `os.UserConfigDir`
 
 ## how to build
 1. clone the project with `git clone https://github.com/HutchyBen/maifetch`
-2. build with `go build maifetch/cmd/maifetch`
-3. run outputted executable ensuring access token is either
+2. install Free Pascal 3.2+ (`brew install fpc` on macOS or the distro `fpc` packages on Linux)
+3. build with `fpc -Mdelphi -FEbuild -FUbuild src/maifetch.pas`
+4. run `build/maifetch`, ensuring access token is either
     - in config file
     - in environment variables
     - in command line options
+
+## validation
+Run the fixture test without a MaiTea token:
+
+```sh
+./test/run-fixture.sh
+```
+
+The fixture test compiles the Delphi-mode Pascal source with Free Pascal and verifies profile and recent-score rendering from local JSON fixtures.
 
 
 ## todo

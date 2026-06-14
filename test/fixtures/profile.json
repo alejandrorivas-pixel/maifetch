@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "id": 123456,
+      "name": "Test Player",
+      "rating": 12345,
+      "rating_highest": 13000,
+      "level": 42,
+      "play_stats": {
+        "total": 99
+      },
+      "options": {
+        "icon": {
+          "png": "https://example.com/icon.png"
+        }
+      }
+    }
+  ]
+}

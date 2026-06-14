@@ -1,0 +1,17 @@
+name: Delphi
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-fixture-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Free Pascal
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fp-compiler fp-units-fcl fp-units-gfx fp-units-net
+      - name: Build and run fixture test
+        run: ./test/run-fixture.sh
