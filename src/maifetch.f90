@@ -140,7 +140,7 @@ contains
   subroutine load_config(cfg)
     type(config), intent(out) :: cfg
     character(:), allocatable :: arg, next, cli_token, cli_config
-    character(:), allocatable :: env_token, env_logo, env_scores
+    character(:), allocatable :: env_config, env_token, env_logo, env_scores
     integer :: i, argc, cli_logo, cli_scores
     logical :: has_cli_logo, has_cli_scores
 
@@ -213,6 +213,8 @@ contains
       i = i + 1
     end do
 
+    env_config = env_value("MAITEA_CONFIG_FILE")
+    if (len_trim(env_config) > 0) cfg%config_file = env_config
     if (len_trim(cli_config) > 0) cfg%config_file = cli_config
     cfg%access_token = ""
     call read_json_config(cfg%config_file, cfg%access_token, &

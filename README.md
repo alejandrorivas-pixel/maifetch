@@ -22,7 +22,7 @@ obtained from `os.UserConfigDir`
 
 ## how to build
 1. clone the project with `git clone https://github.com/HutchyBen/maifetch`
-2. install a Fortran compiler such as `gfortran`
+2. install a Fortran compiler such as `gfortran` and make sure `curl` is available for API requests
 3. build with `gfortran -std=f2008 -ffree-line-length-none src/maifetch.f90 -o maifetch`
 4. run outputted executable ensuring access token is either
     - in config file
